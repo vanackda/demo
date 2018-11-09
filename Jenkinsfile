@@ -20,7 +20,7 @@ pipeline {
 
     post {
         always {
-	 dependencyTrackPublisher(artifact:'build/reports/dependency-check-report.html')            
+	 dependencyTrackPublisher(artifact:'build/reports/dependency-check-report.html', artifactType: 'scanResult')            
         }
     }
 }
