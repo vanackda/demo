@@ -12,11 +12,15 @@ pipeline {
                 sh './gradlew dependencyCheckAnalyze'
             }
         }
+
+	stage('Publish Reports') {
+
+	}
     }
 
     post {
         always {
-            dependencyCheckPublisher pattern: 'build/reports/dependency-check-report.xml'
+	 dependencyTrackPublisher(artifact:'build/reports/dependency-check-report.html')            
         }
     }
 }
