@@ -15,7 +15,7 @@ pipeline {
 
 	stage('Publish Reports') {
 		steps {
-			dependencyTrackPublisher(artifact:'build/reports/dependency-check-report.html', artifactType: 'scanResult')            
+			dependencyTrackPublisher(artifact:'build/reports/dependency-check-report.html', artifactType: 'scanResult', projectName: 'demo')            
 		}
 	}
     }
