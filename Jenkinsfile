@@ -15,6 +15,7 @@ pipeline {
         }    
         stage('Publish Reports') {
             steps {
+                dependencyCheckPublisher(canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '', unHealthy: '')
                 dependencyTrackPublisher(artifact:'dependency-check-report.xml', artifactType: 'scanResult', projectName: 'demo', projectVersion:'1.0')            
             }
         }
