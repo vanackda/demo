@@ -7,11 +7,6 @@ pipeline {
                 sh './gradlew build'
             }
         }
-        stage('OWASP Dependency Check') {
-            steps {
-                sh './gradlew dependencyCheckAnalyze'
-            }
-        }
 
         stage('Dependency Check') {
             steps {
